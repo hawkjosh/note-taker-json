@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background-color: hsla(0, 0%, 96%, 1);
+	font-family: 'Roboto', sans-serif;
+	height: 100%;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+* ::-webkit-scrollbar {
+	display: none;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: hsla(240, 100%, 50%, 1);
+	padding: 2rem 2.5rem;
+
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 7.5rem;
+	z-index: 1;
+}
+
+.navbar-title-container {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	justify-content: center;
+}
+
+.navbar-title {
+	color: #fff;
+	font-size: 3rem;
+	font-weight: 600;
+	letter-spacing: 0.25rem;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.navbar-icons {
+	display: flex;
+	align-items: center;
+	gap: 3rem;
+}
+
+.navbar-icons * {
+	cursor: pointer;
+}
+
+.save-note-hide {
+	display: none;
+}
+
+.save-note-show {
+	display: inline;
+}
+
+.notes-page-wrapper {
+	display: flex;
+	margin: 0rem 1rem;
+}
+
+.notes-list-container {
+	flex-basis: calc(100% * 1 / 3);
+	width: calc(100% * 1 / 3);
+
+	position: absolute;
+	top: 7.5rem;
+	z-index: 0;
+}
+
+.notes-list {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	min-height: 100vh;
+	border-left: 0.15rem solid hsla(240, 100%, 50%, 1);
+	border-right: 0.15rem solid hsla(240, 100%, 50%, 1);
+	overflow-y: scroll;
+}
+
+.notes-list-item {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 0.1rem solid hsla(240, 100%, 50%, 1);
+	padding: 1.125rem;
+}
+
+.notes-list-item:last-child {
+	border-bottom: none;
+}
+
+.notes-list-item-title {
+	font-size: 1.25rem;
+	color: hsla(240, 100%, 50%, 1);
+	cursor: pointer;
+	padding: 0.25rem 0.5rem;
+}
+
+.notes-list-item-title:hover {
+	font-weight: bold;
+}
+
+.notes-list-item-title:active {
+	font-weight: bold;
+	outline: solid hsla(60, 100%, 50%, 1);
+}
+
+.delete-icon:hover {
+	fill: hsla(9, 100%, 64%, 1);
+	cursor: pointer;
+}
+
+.new-note-container {
+	flex-basis: calc(100% * 2 / 3);
+	width: calc(100% * 2 / 3);
+	padding-right: 1.5rem;
+	padding-left: 2.5rem;
+
+	position: fixed;
+	top: 7.5rem;
+	right: 0;
+}
+
+.note-title {
+	width: 100%;
+	font-size: 2.75rem;
+	color: hsla(240, 100%, 50%, 1);
+	background-color: hsla(0, 0%, 96%, 1);
+	border: none;
+	border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
+	outline: none;
+	padding: 0.75rem 0rem;
+}
+
+*::placeholder {
+	color: rgb(190, 190, 190);
+	font-style: italic;
+}
+
+.note-text {
+	width: 100%;
+	height: 100vh;
+	font-size: 1.5rem;
+	font-family: inherit;
+	line-height: inherit;
+	color: hsla(240, 100%, 50%, 1);
+	background-color: hsla(0, 0%, 96%, 1);
+	border: none;
+	outline: none;
+	resize: none;
+	padding: 0.75rem 0.25rem 0rem;
+}
