@@ -1,13 +1,13 @@
 {
-  "name": "server",
-  "version": "1.0.0",
-  "main": "server.js",
-  "license": "MIT",
-  "scripts": {
-    "start": "node --watch server.js"
-  },
-  "dependencies": {
-    "express": "^4.18.2",
-    "uuid": "^9.0.0"
-  }
+	"name": "server",
+	"version": "1.0.0",
+	"main": "server.js",
+	"license": "MIT",
+	"scripts": {
+		"start": "node --watch server.js"
+	},
+	"dependencies": {
+		"express": "^4.18.2",
+		"uuid": "^9.0.0"
+	}
 }

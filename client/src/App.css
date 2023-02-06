@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 
 *,
 *::before,
@@ -8,7 +9,7 @@
 
 html,
 body {
-	background-color: hsla(0, 0%, 96%, 1);
+	background-color: hsla(0, 0%, 94%, 1);
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	line-height: 1.5;
@@ -38,27 +39,37 @@ body {
 .navbar-title-container {
 	display: flex;
 	align-items: center;
-	gap: 2rem;
+	gap: clamp(1.5rem, 1.327rem + 0.647vw, 2rem);
 	justify-content: center;
 }
 
 .navbar-title {
-	color: #fff;
-	font-size: 3rem;
-	font-weight: 600;
+	color: hsla(0, 0%, 100%, 1);
+	font-size: clamp(1.25rem, 0.644rem + 2.265vw, 3rem);
+	font-weight: 500;
 	letter-spacing: 0.25rem;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
+.navbar-subtitle {
+	font-size: clamp(1.5rem, 0.857rem + 1.339vw, 2.25rem);
+	font-family: 'Waiting for the Sunrise', cursive;
+	color: hsla(45, 100%, 51%, 1);
+}
+@media (max-width: 768px) {
+}
+
 .navbar-icons {
 	display: flex;
 	align-items: center;
-	gap: 3rem;
+	gap: clamp(1.5rem, 0.981rem + 1.942vw, 3rem);
 }
 
-.navbar-icons * {
+.navbar-icons *:hover {
 	cursor: pointer;
+	fill: hsla(45, 100%, 51%, 1);
+	stroke: none;
 }
 
 .save-note-hide {
@@ -75,8 +86,8 @@ body {
 }
 
 .notes-list-container {
-	flex-basis: calc(100% * 1 / 3);
-	width: calc(100% * 1 / 3);
+	flex-basis: 37.5%;
+	width: 37.5%;
 
 	position: absolute;
 	top: 7.5rem;
@@ -88,16 +99,17 @@ body {
 	flex-direction: column;
 	height: 100%;
 	min-height: 100vh;
-	border-left: 0.15rem solid hsla(240, 100%, 50%, 1);
-	border-right: 0.15rem solid hsla(240, 100%, 50%, 1);
+	border-left: 0.1rem solid hsla(240, 100%, 50%, 1);
+	border-right: 0.1rem solid hsla(240, 100%, 50%, 1);
 	overflow-y: scroll;
+	padding: 0rem 0.75rem;
 }
 
 .notes-list-item {
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 0.1rem solid hsla(240, 100%, 50%, 1);
-	padding: 1.125rem;
+	border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
+	padding: 1.125rem 1rem;
 }
 
 .notes-list-item:last-child {
@@ -105,19 +117,27 @@ body {
 }
 
 .notes-list-item-title {
-	font-size: 1.25rem;
+	font-size: clamp(1.25rem, 1.036rem + 0.446vw, 1.5rem);
 	color: hsla(240, 100%, 50%, 1);
-	cursor: pointer;
-	padding: 0.25rem 0.5rem;
+	padding: 0.25rem 0rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: fit-content;
+	max-width: 85%;
+}
+
+.notes-list-item-title[data-status='active'] {
+	font-weight: 500;
+}
+
+.notes-list-item-title[data-status='active']::before {
+	content: '⭐ ';
 }
 
 .notes-list-item-title:hover {
-	font-weight: bold;
-}
-
-.notes-list-item-title:active {
-	font-weight: bold;
-	outline: solid hsla(60, 100%, 50%, 1);
+	font-weight: 500;
+	cursor: pointer;
 }
 
 .delete-icon:hover {
@@ -126,8 +146,8 @@ body {
 }
 
 .new-note-container {
-	flex-basis: calc(100% * 2 / 3);
-	width: calc(100% * 2 / 3);
+	flex-basis: 62.5%;
+	width: 62.5%;
 	padding-right: 1.5rem;
 	padding-left: 2.5rem;
 
@@ -138,9 +158,9 @@ body {
 
 .note-title {
 	width: 100%;
-	font-size: 2.75rem;
+	font-size: clamp(2.25rem, 1.99rem + 0.971vw, 3rem);
 	color: hsla(240, 100%, 50%, 1);
-	background-color: hsla(0, 0%, 96%, 1);
+	background-color: hsla(0, 0%, 94%, 1);
 	border: none;
 	border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
 	outline: none;
@@ -155,13 +175,97 @@ body {
 .note-text {
 	width: 100%;
 	height: 100vh;
-	font-size: 1.5rem;
+	font-size: clamp(1.25rem, 1.077rem + 0.647vw, 1.75rem);
 	font-family: inherit;
 	line-height: inherit;
 	color: hsla(240, 100%, 50%, 1);
-	background-color: hsla(0, 0%, 96%, 1);
+	background-color: hsla(0, 0%, 94%, 1);
 	border: none;
 	outline: none;
 	resize: none;
 	padding: 0.75rem 0.25rem 0rem;
+}
+
+@media (max-width: 768px) {
+	.navbar-subtitle {
+		display: none;
+	}
+
+	.notes-page-wrapper {
+		flex-direction: column-reverse;
+	}
+
+	.new-note-container {
+		all: unset;
+
+		position: fixed;
+		width: 100%;
+		height: 10rem;
+		top: 7.5rem;
+	}
+
+	.note-title {
+		all: unset;
+
+		width: 100%;
+		font-size: clamp(2.25rem, 1.99rem + 0.971vw, 3rem);
+		color: hsla(240, 100%, 50%, 1);
+		background-color: hsla(0, 0%, 96%, 1);
+		border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
+		padding: 0.75rem 0rem;
+		padding-left: 1rem;
+		margin-left: -1rem;
+		overflow-x: hidden;
+	}
+
+	.note-text {
+		all: unset;
+
+		width: 100%;
+		height: 10.5rem;
+		font-size: clamp(1.25rem, 1.077rem + 0.647vw, 1.75rem);
+		color: hsla(240, 100%, 50%, 1);
+		background-color: hsla(0, 0%, 96%, 1);
+		padding-top: 1rem;
+		padding-left: 1rem;
+		margin-left: -1rem;
+		border-bottom: 0.2rem solid hsla(240, 100%, 50%, 1);
+	}
+
+	.notes-list-container {
+		all: unset;
+
+		position: absolute;
+		width: 95%;
+		top: 25rem;
+		z-index: 0;
+	}
+
+	.notes-list {
+		all: unset;
+
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.notes-list-item-title {
+		all: unset;
+
+		font-size: clamp(1rem, 0.685rem + 1.176vw, 1.25rem);
+		color: hsla(240, 100%, 50%, 1);
+		cursor: pointer;
+		padding: 0.25rem 0rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: fit-content;
+		max-width: 85%;
+	}
+}
+
+@media (max-width: 400px) {
+	.navbar-title {
+		display: none;
+	}
 }

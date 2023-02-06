@@ -1,1 +1,32 @@
-[]
+[
+    {
+        "title": "Today's Todos",
+        "text": "Note text",
+        "id": "34a49da9-0905-4ef0-9df9-144dac016b8b"
+    },
+    {
+        "title": "Random Thoughts",
+        "text": "Note text",
+        "id": "fd96c14a-e41a-49a7-ad65-34255e840743"
+    },
+    {
+        "title": "Birthday Gift Ideas",
+        "text": "Note text",
+        "id": "bf63eac6-bb36-4ebc-93ba-647e17ac12a2"
+    },
+    {
+        "title": "Movies List",
+        "text": "Note text",
+        "id": "a3e57ded-d847-42d2-b76f-bed7de6fff65"
+    },
+    {
+        "title": "Grocery Shopping List",
+        "text": "🍞  Bread\n\n🧀  Cheese\n\n🥓  Bacon\n\n🍗  Chicken\n\n🍌  Bananas\n\n🍎  Apples",
+        "id": "28d5c67e-d6fa-4e8b-b16d-a652c306bd39"
+    },
+    {
+        "title": "Important Dates",
+        "text": "Note text",
+        "id": "6d41962d-f22a-40cb-9ee7-566407ebbee4"
+    }
+]
