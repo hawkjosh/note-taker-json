@@ -1,6 +1,9 @@
-import { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 
 import './App.css'
+
+import CustomInput from './components/CustomInput.jsx'
+import CustomTextarea from './components/CustomTextarea.jsx'
 
 import PencilIcon from './components/page-icons/PencilIcon.jsx'
 import SaveIcon from './components/page-icons/SaveIcon.jsx'
@@ -69,7 +72,7 @@ export default () => {
 		<div>
 			<div className='navbar'>
 				<div className='navbar-title-container'>
-					<PencilIcon iconSize='clamp(2.813rem, 2.163rem + 2.427vw, 4.688rem)' />
+					<PencilIcon iconSize='clamp(2.5rem, 1.721rem + 2.913vw, 4.75rem)' />
 					<div className='navbar-title'>Note Taker</div>
 					<div className='navbar-subtitle'>Take notes with Express.js</div>
 				</div>
@@ -81,13 +84,13 @@ export default () => {
 								? 'save-note-hide'
 								: 'save-note-show'
 						}
-						iconSize='clamp(1.563rem, 1.021rem + 2.023vw, 3.125rem)'
+						iconSize='clamp(1.5rem, 0.894rem + 2.265vw, 3.25rem)'
 						iconColor='white'
 						onClick={handleSaveNote}
 					/>
 					<PlusIcon
 						className='new-note'
-						iconSize='clamp(1.563rem, 1.021rem + 2.023vw, 3.125rem)'
+						iconSize='clamp(1.5rem, 0.894rem + 2.265vw, 3.25rem)'
 						iconColor='white'
 						onClick={addNote}
 					/>
@@ -96,48 +99,58 @@ export default () => {
 
 			<div className='notes-page-wrapper'>
 				<div className='notes-list-container'>
-					<div className='notes-list'>
-						{data.map((item, index) => (
-							<Fragment key={index}>
-								<div className='notes-list-item'>
-									<div
-										className='notes-list-item-title'
-										data-status={item === selectedNote ? 'active' : 'inactive'}
-										onClick={() => {
-											handleNoteClick(item)
-										}}>
-										{item.title}
-									</div>
-									<TrashIcon
-										className='delete-icon'
-										iconSize='clamp(0.938rem, 0.613rem + 1.214vw, 1.875rem)'
-										iconColor='darkgray'
-										onClick={() => {
-											deleteNote(item.id)
-										}}
-									/>
+					{data.map((item, index) => (
+						<Fragment key={index}>
+							<div className='notes-list-item'>
+								<div
+									className='notes-list-item-title'
+									data-status={item === selectedNote ? 'active' : 'inactive'}
+									onClick={() => {
+										handleNoteClick(item)
+									}}>
+									{item.title}
 								</div>
-							</Fragment>
-						))}
-					</div>
+								<TrashIcon
+									iconSize='clamp(1.25rem, 1.077rem + 0.647vw, 1.75rem)'
+									iconColor='slategray'
+									onClick={() => {
+										deleteNote(item.id)
+									}}
+								/>
+							</div>
+						</Fragment>
+					))}
 				</div>
 
 				<div className='new-note-container'>
-					<input
-						className='note-title'
+					{/* <input
+						className='new-note-title'
 						placeholder='Note Title'
 						maxLength='28'
 						type='text'
 						value={selectedNote.title ? selectedNote.title : title}
 						onChange={(e) => setTitle(e.target.value)}
+					/> */}
+					<CustomInput
+						className='new-note-title'
+						type='text'
+						value={selectedNote.title ? selectedNote.title : title}
+						onChange={(e) => setTitle(e.target.value)}
+						placeholder='Note Title'
 					/>
-					<textarea
-						className='note-text'
+					{/* <textarea
+						className='new-note-text'
 						placeholder='Note Text'
 						maxLength='250'
 						type='text'
 						value={selectedNote.title ? selectedNote.text : text}
 						onChange={(e) => setText(e.target.value)}
+					/> */}
+					<CustomTextarea
+						className='new-note-text'
+						value={selectedNote.title ? selectedNote.text : text}
+						onChange={(e) => setText(e.target.value)}
+						placeholder='Note Text'
 					/>
 				</div>
 			</div>

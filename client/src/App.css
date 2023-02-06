@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Waiting+for+the+Sunrise&display=swap');
 
 *,
@@ -9,7 +10,6 @@
 
 html,
 body {
-	background-color: hsla(0, 0%, 94%, 1);
 	font-family: 'Roboto', sans-serif;
 	height: 100%;
 	line-height: 1.5;
@@ -22,42 +22,38 @@ body {
 }
 
 .navbar {
+	width: 100%;
+	height: 7.5rem;
+	position: fixed;
+	top: 0;
+	z-index: 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: hsla(240, 100%, 50%, 1);
+	background-color: hsla(209, 96%, 48%, 1);
 	padding: 2rem 2.5rem;
-
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 7.5rem;
-	z-index: 1;
+	border-bottom: 0.15rem solid hsla(240, 93%, 38%, 1);
 }
 
 .navbar-title-container {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: clamp(1.5rem, 1.327rem + 0.647vw, 2rem);
-	justify-content: center;
 }
 
 .navbar-title {
-	color: hsla(0, 0%, 100%, 1);
-	font-size: clamp(1.25rem, 0.644rem + 2.265vw, 3rem);
+	font-size: clamp(1.5rem, 0.981rem + 1.942vw, 3rem);
 	font-weight: 500;
-	letter-spacing: 0.25rem;
-	text-decoration: none;
+	letter-spacing: clamp(0.15rem, 0.064rem + 0.179vw, 0.25rem);
 	text-transform: uppercase;
+	color: hsla(0, 0%, 100%, 1);
 }
 
 .navbar-subtitle {
 	font-size: clamp(1.5rem, 0.857rem + 1.339vw, 2.25rem);
 	font-family: 'Waiting for the Sunrise', cursive;
 	color: hsla(45, 100%, 51%, 1);
-}
-@media (max-width: 768px) {
 }
 
 .navbar-icons {
@@ -66,50 +62,49 @@ body {
 	gap: clamp(1.5rem, 0.981rem + 1.942vw, 3rem);
 }
 
-.navbar-icons *:hover {
+.navbar-icons > svg:hover {
 	cursor: pointer;
 	fill: hsla(45, 100%, 51%, 1);
-	stroke: none;
+	stroke: hsla(240, 93%, 38%, 1);
+	stroke-width: 25;
 }
 
 .save-note-hide {
-	display: none;
+	visibility: hidden;
 }
 
 .save-note-show {
-	display: inline;
+	visibility: visible;
 }
 
 .notes-page-wrapper {
-	display: flex;
-	margin: 0rem 1rem;
+	width: 100%;
+	position: absolute;
+	top: 7.5rem;
+	display: grid;
+	grid-template-columns: 35% 65%;
 }
 
 .notes-list-container {
-	flex-basis: 37.5%;
-	width: 37.5%;
-
-	position: absolute;
-	top: 7.5rem;
-	z-index: 0;
-}
-
-.notes-list {
-	display: flex;
-	flex-direction: column;
+	width: 100%;
 	height: 100%;
 	min-height: 100vh;
-	border-left: 0.1rem solid hsla(240, 100%, 50%, 1);
-	border-right: 0.1rem solid hsla(240, 100%, 50%, 1);
+	position: relative;
+	top: 0;
+	z-index: 0;
 	overflow-y: scroll;
-	padding: 0rem 0.75rem;
+	display: flex;
+	flex-direction: column;
+	background-color: hsla(0, 0%, 99%, 1);
+	border-right: 0.15rem solid hsla(45, 100%, 51%, 1);
 }
 
 .notes-list-item {
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
-	padding: 1.125rem 1rem;
+	align-items: center;
+	border-bottom: 0.075rem solid hsla(240, 93%, 38%, 1);
+	padding: 0.75rem 1.25rem;
 }
 
 .notes-list-item:last-child {
@@ -117,14 +112,13 @@ body {
 }
 
 .notes-list-item-title {
-	font-size: clamp(1.25rem, 1.036rem + 0.446vw, 1.5rem);
-	color: hsla(240, 100%, 50%, 1);
-	padding: 0.25rem 0rem;
+	width: fit-content;
+	max-width: 80%;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	width: fit-content;
-	max-width: 85%;
+	font-size: clamp(1.15rem, 0.977rem + 0.647vw, 1.65rem);
+	color: hsla(240, 93%, 38%, 1);
 }
 
 .notes-list-item-title[data-status='active'] {
@@ -140,50 +134,42 @@ body {
 	cursor: pointer;
 }
 
-.delete-icon:hover {
+.notes-list-item > svg:hover {
 	fill: hsla(9, 100%, 64%, 1);
 	cursor: pointer;
 }
 
 .new-note-container {
-	flex-basis: 62.5%;
-	width: 62.5%;
-	padding-right: 1.5rem;
-	padding-left: 2.5rem;
-
+	width: 65%;
+	height: 100%;
 	position: fixed;
-	top: 7.5rem;
 	right: 0;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	background: hsla(45, 100%, 85%, 1);
 }
 
-.note-title {
-	width: 100%;
-	font-size: clamp(2.25rem, 1.99rem + 0.971vw, 3rem);
-	color: hsla(240, 100%, 50%, 1);
-	background-color: hsla(0, 0%, 94%, 1);
-	border: none;
-	border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
-	outline: none;
-	padding: 0.75rem 0rem;
+.new-note-title {
+	all: unset;
+	font-size: clamp(2.25rem, 1.904rem + 1.294vw, 3.25rem);
+	color: hsla(240, 93%, 38%, 1);
+	border-bottom: 0.075rem solid hsla(45, 100%, 51%, 1);
+}
+
+.new-note-text {
+	all: unset;
+	height: 100%;
+	overflow-y: scroll;
+	font-size: clamp(1.25rem, 0.99rem + 0.971vw, 2rem);
+	color: hsla(240, 93%, 38%, 1);
+	background-color: transparent;
 }
 
 *::placeholder {
 	color: rgb(190, 190, 190);
 	font-style: italic;
-}
-
-.note-text {
-	width: 100%;
-	height: 100vh;
-	font-size: clamp(1.25rem, 1.077rem + 0.647vw, 1.75rem);
-	font-family: inherit;
-	line-height: inherit;
-	color: hsla(240, 100%, 50%, 1);
-	background-color: hsla(0, 0%, 94%, 1);
-	border: none;
-	outline: none;
-	resize: none;
-	padding: 0.75rem 0.25rem 0rem;
 }
 
 @media (max-width: 768px) {
@@ -192,75 +178,20 @@ body {
 	}
 
 	.notes-page-wrapper {
+		display: flex;
 		flex-direction: column-reverse;
 	}
 
 	.new-note-container {
-		all: unset;
-
-		position: fixed;
 		width: 100%;
-		height: 10rem;
+		height: 16rem;
 		top: 7.5rem;
-	}
-
-	.note-title {
-		all: unset;
-
-		width: 100%;
-		font-size: clamp(2.25rem, 1.99rem + 0.971vw, 3rem);
-		color: hsla(240, 100%, 50%, 1);
-		background-color: hsla(0, 0%, 96%, 1);
-		border-bottom: 0.075rem solid hsla(240, 100%, 50%, 1);
-		padding: 0.75rem 0rem;
-		padding-left: 1rem;
-		margin-left: -1rem;
-		overflow-x: hidden;
-	}
-
-	.note-text {
-		all: unset;
-
-		width: 100%;
-		height: 10.5rem;
-		font-size: clamp(1.25rem, 1.077rem + 0.647vw, 1.75rem);
-		color: hsla(240, 100%, 50%, 1);
-		background-color: hsla(0, 0%, 96%, 1);
-		padding-top: 1rem;
-		padding-left: 1rem;
-		margin-left: -1rem;
-		border-bottom: 0.2rem solid hsla(240, 100%, 50%, 1);
+		border-bottom: 0.15rem solid hsla(45, 100%, 51%, 1);
 	}
 
 	.notes-list-container {
-		all: unset;
-
-		position: absolute;
-		width: 95%;
-		top: 25rem;
-		z-index: 0;
-	}
-
-	.notes-list {
-		all: unset;
-
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-	}
-
-	.notes-list-item-title {
-		all: unset;
-
-		font-size: clamp(1rem, 0.685rem + 1.176vw, 1.25rem);
-		color: hsla(240, 100%, 50%, 1);
-		cursor: pointer;
-		padding: 0.25rem 0rem;
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		width: fit-content;
-		max-width: 85%;
+		top: 16rem;
+		border: none;
 	}
 }
 
