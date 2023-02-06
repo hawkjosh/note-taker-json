@@ -25,8 +25,8 @@ notes.post('/post', (req, res) => {
 // Route for deleting existing note
 notes.delete('/delete/:id', (req, res) => {
 	const noteId = req.params.id
-  const notes = JSON.parse(data)
-	readNote('db.json').then((data) => res.json(notes))
+	readNote('db.json')
+		.then((data) => JSON.parse(data))
 		.then((json) => {
 			const result = json.filter((note) => note.id !== noteId)
 			writeNote('db.json', result)

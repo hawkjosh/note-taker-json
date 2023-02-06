@@ -32,7 +32,8 @@ export default () => {
 			const response = await fetch('/api/notes/get')
 			const updatedData = await response.json()
 			setData(updatedData)
-		})
+		}
+	)
 
 	const deleteNote = (noteId) =>
 		fetch(`/api/notes/delete/${noteId}`, {
@@ -42,7 +43,8 @@ export default () => {
 			const response = await fetch('/api/notes/get')
 			const updatedData = await response.json()
 			setData(updatedData)
-		})
+		}
+	)
 
 	const handleSaveNote = () => {
 		const newNote = {
@@ -53,12 +55,6 @@ export default () => {
 		setTitle('')
 		setText('')
 	}
-
-	// const handleDeleteNote = (e) => {
-	// 	e.stopPropagation()
-
-
-	// }
 
 	const addNote = () => {
 		setTitle('')
@@ -114,7 +110,7 @@ export default () => {
 										className='delete-icon'
 										iconSize='20px'
 										iconColor='darkgray'
-										onClick={deleteNote(item.id)}
+										onClick={() => {deleteNote(item.id)}}
 									/>
 								</div>
 							</Fragment>

@@ -6,7 +6,8 @@
 	"homepage": "./",
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build && xcopy /Y \"C:\\Users\\hawkj\\code-hawk\\vite-note-taker\\client\\dist\" \"C:\\Users\\hawkj\\code-hawk\\vite-note-taker\\server\\dist\" /E/H/C/I",
+		"build:work": "vite build && xcopy /Y \"C:\\Users\\jhawk\\Coding\\vite-note-taker\\client\\dist\" \"C:\\Users\\jhawk\\Coding\\vite-note-taker\\server\\dist\" /E/H/C/I",
+		"build": "vite build && xcopy /Y \"C:\\Users\\hawkj\\code-hawk\\vite-note-taker\\client\\dist\" \"C:\\Users\\hawkj\\code-hawk\\vite-note-taker\\server\\dist\\\" /E/H/C/I",
 		"preview": "vite preview"
 	},
 	"dependencies": {
