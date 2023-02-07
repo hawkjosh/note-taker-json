@@ -11,7 +11,6 @@ export default (props) => {
 
 	function handleChange(e) {
 		setInputValue(e.target.value)
-		// if (props.onChange) props.onChange(inputValue)
 		props.onChange ? props.onChange(inputValue) : null
 	}
 	return (

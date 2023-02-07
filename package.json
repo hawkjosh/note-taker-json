@@ -1,0 +1,11 @@
+{
+	"name": "note-taker",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/hawkjosh/vite-note-taker.git",
+	"author": "hawkjosh <hawkjosh@icloud.com>",
+	"license": "MIT",
+	"scripts": {
+		"start": "cd server && yarn run start"
+	}
+}

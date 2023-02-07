@@ -123,14 +123,6 @@ export default () => {
 				</div>
 
 				<div className='new-note-container'>
-					{/* <input
-						className='new-note-title'
-						placeholder='Note Title'
-						maxLength='28'
-						type='text'
-						value={selectedNote.title ? selectedNote.title : title}
-						onChange={(e) => setTitle(e.target.value)}
-					/> */}
 					<CustomInput
 						className='new-note-title'
 						type='text'
@@ -138,14 +130,6 @@ export default () => {
 						onChange={(e) => setTitle(e.target.value)}
 						placeholder='Note Title'
 					/>
-					{/* <textarea
-						className='new-note-text'
-						placeholder='Note Text'
-						maxLength='250'
-						type='text'
-						value={selectedNote.title ? selectedNote.text : text}
-						onChange={(e) => setText(e.target.value)}
-					/> */}
 					<CustomTextarea
 						className='new-note-text'
 						value={selectedNote.title ? selectedNote.text : text}
