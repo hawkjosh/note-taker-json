@@ -1,22 +1,22 @@
 [
     {
         "title": "Today's Todos",
-        "text": "Note text",
+        "text": "Note text for today's todos...",
         "id": "34a49da9-0905-4ef0-9df9-144dac016b8b"
     },
     {
         "title": "Random Thoughts",
-        "text": "Note text",
+        "text": "Note text for random thoughts...",
         "id": "fd96c14a-e41a-49a7-ad65-34255e840743"
     },
     {
         "title": "Birthday Gift Ideas",
-        "text": "Note text",
+        "text": "Note text for birthday gift ideas...",
         "id": "bf63eac6-bb36-4ebc-93ba-647e17ac12a2"
     },
     {
         "title": "Movies List",
-        "text": "Note text",
+        "text": "Note text for movies list...",
         "id": "a3e57ded-d847-42d2-b76f-bed7de6fff65"
     },
     {
@@ -26,7 +26,12 @@
     },
     {
         "title": "Important Dates",
-        "text": "Note text",
+        "text": "Note text for important dates...",
         "id": "cd8cff2f-f254-450f-be0c-77972f3f1c27"
+    },
+    {
+        "title": "House Reno Plans",
+        "text": "Note text for house reno plans...",
+        "id": "98ab8010-bd2e-4b6e-834d-8eb2d5c07f02"
     }
 ]
