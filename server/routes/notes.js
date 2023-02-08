@@ -12,13 +12,13 @@ notes.post('/post', (req, res) => {
 	const { title, text } = req.body
 	if (req.body) {
 		const newNote = {
-			title,
-			text,
+			title: title,
+			text: text,
 			id: uuidv4(),
 		}
 		const noteId = req.params.id
 		updateNote(newNote, 'db.json')
-		res.json(`New note ${noteId} has been posted.`)
+		res.json(`New note posted → (ID: ${noteId})`)
 	}
 })
 
@@ -30,7 +30,7 @@ notes.delete('/delete/:id', (req, res) => {
 		.then((json) => {
 			const result = json.filter((note) => note.id !== noteId)
 			writeNote('db.json', result)
-			res.json(`Note ${noteId} has been deleted.`)
+			res.json(`Note deleted → (ID: ${noteId})`)
 		})
 })
 
