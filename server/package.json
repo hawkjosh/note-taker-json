@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"main": "server.js",
 	"license": "MIT",
+	"homepage": "https://hawkjosh-note-taker.onrender.com",
 	"scripts": {
 		"start": "node server.js"
 	},

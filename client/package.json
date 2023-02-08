@@ -3,7 +3,7 @@
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
-	"homepage": "https://hawkjosh-note-taker.onrender.com",
+	"homepage": "https://hawkjosh-note-taker-client.onrender.com",
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
